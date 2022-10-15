@@ -1,18 +1,7 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { BiMenu, BiX, BiSearchAlt } from "react-icons/bi";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ searchAnime, query, setQuery }) => {
-  const [nav, setNav] = useState(false);
-  const [search, setSearch] = useState(false);
-
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
-  const handleSearch = () => {
-    setSearch(!search);
-  };
+const GenresList = () => {
   const navLink = [
     { title: "Home", link: "/" },
     { title: "Action", link: "/anime/action" },
@@ -62,60 +51,20 @@ const Navbar = ({ searchAnime, query, setQuery }) => {
     { title: "Yuri", link: "/anime/yuri" },
   ];
   return (
-    <header className="sticky top-0 z-50 bg-primary  ">
-      <nav className="container mx-auto px-4 py-5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-16">
-            <Link to="/" className="text-3xl font-bold ">
-              Animex
-            </Link>
-          </div>
-          <form
-            action=""
-            onSubmit={(e) => e.preventDefault()}
-            className={
-              search
-                ? "absolute top-[70px] w-full left-0 px-4"
-                : "md:block hidden"
-            }
-          >
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              onKeyPress={searchAnime}
-              type="text"
-              className="rounded-full bg-secondary focus:outline-none pl-4 py-2 md:w-[375px] w-full"
-              placeholder="Search a anime..."
-            />
-          </form>
-          <div className="flex gap-3 items-center md:hidden">
-            <BiSearchAlt size={30} onClick={handleSearch} />
-            <div onClick={handleNav}>
-              {nav ? <BiX size={30} /> : <BiMenu size={30} />}
-            </div>
-          </div>
-
-          <ul
-            className={
-              nav
-                ? "absolute top-[70px] bg-primary right-0 flex flex-col z-50 gap-5 py-5 w-full text-center ease-in-out duration-500"
-                : "right-[-100%] top-[70px] absolute hidden"
-            }
-          >
-            {navLink.map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.link}
-                className="px-4 text-gray-500 hover:text-white"
-              >
-                {item.title}
-              </Link>
-            ))}
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <div>
+      <div className="w-full md:overflow-x-hidden h-[80vh] no-scrollbar hidden md:block">
+        <h2 className="text-2xl font-semibold">Genres</h2>
+        <p className="text-gray-500">Swipe for more</p>
+        <ul className="flex flex-col gap-3 mt-5 ">
+          {navLink.map((item) => (
+            <li>
+              <Link to={item.link}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default GenresList;

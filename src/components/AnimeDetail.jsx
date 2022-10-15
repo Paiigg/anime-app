@@ -36,7 +36,7 @@ const AnimeDetail = () => {
               <p className="font-semibold">Release :</p>
               <p className="text-gray-500">{detail.releasedDate}</p>
               <p className="font-semibold">Genres :</p>
-              <p className="flex gap-2  flex-wrap ">
+              <p className="flex gap-2  flex-wrap w-[80%] ">
                 {detail.genres?.map((item) => (
                   <p className="text-gray-500 text-center md:text-left">
                     {item}

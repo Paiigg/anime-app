@@ -32,11 +32,20 @@ body {
 
 .slick-prev,
 .slick-next {
-  z-index: 999 !important;
+  z-index: 49 !important;
 }
 .slick-prev {
   left: 25px !important;
 }
 .slick-next {
   right: 25px !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

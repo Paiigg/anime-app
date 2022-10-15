@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Genres from "./components/Genres";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import AnimeDetail from "./components/AnimeDetail";
 

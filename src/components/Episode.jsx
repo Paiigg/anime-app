@@ -36,11 +36,11 @@ const Episode = ({ data, url }) => {
 
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">>"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={2}
+        pageRangeDisplayed={1}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="<<"
         renderOnZeroPageCount={null}
         containerClassName="flex gap-5 items-center justify-center mt-5 "
       />
