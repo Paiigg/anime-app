@@ -24,7 +24,7 @@ function App() {
     }
   };
   return (
-    <div className="App">
+    <div className="App overflow-x-hidden">
       <Navbar searchAnime={searchAnime} query={query} setQuery={setQuery} />
       <Routes>
         <Route path="/" exact element={<Home search={search} div={div} />} />

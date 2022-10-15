@@ -21,11 +21,13 @@ const Navbar = ({ searchAnime, query, setQuery }) => {
     { title: "Comedy", link: "/anime/comedy" },
   ];
   return (
-    <header className="sticky top-0 z-50 bg-primary ">
+    <header className="sticky top-0 z-50 bg-primary  ">
       <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-16">
-            <h1 className="text-3xl font-bold ">Animex</h1>
+            <Link to="/" className="text-3xl font-bold ">
+              Animex
+            </Link>
             <ul className="hidden md:block">
               {navLink.map((item, idx) => (
                 <Link
